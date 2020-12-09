@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="./assets/style.css">
+    <title>Weather Dashboard</title>
+</head>
+
+<body>
+    <!-- Navbar section -->
+    <nav class="navbar navbar-dark bg-info">
+        <span class="navbar-brand mb-0 h1 w-100 text-center">Weather Dashboard</span>
+    </nav>
+    <!-- Search box and section -->
+    <section class="container">
+        <section class="row">
+            <section class="col-4 bg-light">
+                <p class="search-header my-1">Search For A City</p>
+                <section class="input-group mb-3">
+                    <input id="city-input" type="text" class="form-control" placeholder="Type in the name of the city"
+                        aria-label="Type in the name of the city">
+                    <section class="input-group-append">
+                        <button class="btn btn-warning" type="button" id="search-button">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </section>
+                </section>
+                <!-- Search history of cities -->
+                <button class="btn btn-warning mb-3" type="button" id="clear-history">Clear Your History</button>
+                <form id="history"></form>
+            </section>
+            <section class="col-8">
+                <section class="row mr-0">
+                    <section class="col-12 border border-dark m-3 rounded">
+                        <section class="row">
+                            <section class="col-12">
+                                <span id="city-name" class="city-name align-middle"></span>
+                                <img id="current-pic" src="placeholder" alt="">
+                            </section>
+                        </section>
+                        <section class="row">
+                            <section class="col-12">
+                                <p id="temperature"></p>
+                            </section>
+                        </section>
+                        <section class="row">
+                            <section class="col-12">
+                                <p id="humidity"></p>
+                            </section>
+                        </section>
+                        <section class="row">
+                            <section class="col-12">
+                                <p id="wind-speed"></p>
+                            </section>
+                        </section>
+                        <section class="row">
+                            <section class="col-12 d-flex">
+                                <p id="UV-index"></p>
+                            </section>
+                        </section>
+                    </section>
+                </section>
+                <section class="row">
+                    <section class="col-12">
+                        <h3>The 5-Day Forecast</h3>
+                    </section>
+                </section>
+                <section class="row">
+                    <section class="col forecast bg-warning text-white ml-3 mb-3 rounded">
+                        </div>
+                        <section class="col forecast bg-warning text-white ml-3 mb-3 rounded">
+                            </div>
+                            <section class="col forecast bg-warning text-white ml-3 mb-3 rounded">
+                                </div>
+                                <section class="col forecast bg-warning text-white ml-3 mb-3 rounded">
+                                    </div>
+                                    <section class="col forecast bg-warning text-white ml-3 mb-3 rounded">
+                                        </div>
+                                    </section>
+                                </section>
+                            </section>
+                        </section>
+
+                        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+                        <script src="./assets/js/script.js"></script>
+</body>
+
+</html>

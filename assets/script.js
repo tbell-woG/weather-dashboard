@@ -18,8 +18,12 @@ function initPage(){
 
     // This retrieves the current weather condition of the searched city from the Open Weather Map API
     function getFullweather(cityName) {
-        let queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + cityName + "&appid=" + APIKey;
-        axios.get(queryURL)
+        let queryURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${APIKey}`
+        .then(function(response){
+            console.log(response);
+
+    function getweather(cityName) {
+        let queryURL = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=${apiKey}`
         .then(function(response){
             console.log(response);
 })
@@ -39,7 +43,7 @@ function initPage(){
         currentWindEl.innerHTML = "Wind Speed: " + response.data.wind.speed + " MPH";
     let lat = response.data.coord.lat;
     let lon = response.data.coord.lon;
-    "https://api.openweathermap.org/data/2.5/uvi/forecast?lat=" + lat + "&lon=" + lon + "&appid=" + APIKey + "&cnt=1";
+    `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${APIKey}`;
     axios.get(UVQueryURL)
     .then(function(response){
         let UVIndex = document.createElement("span");
@@ -51,7 +55,7 @@ function initPage(){
 
 // This displays the 5-day forecast for the searched city from the data retrieved from the Open Weather Map API
     let cityID = response.data.id;
-    let forecastQueryURL = "https://api.openweathermap.org/data/2.5/forecast?id=" + cityID + "&appid=" + APIKey;
+    let forecastQueryURL = `https://api.openweathermap.org/data/2.5/forecast?q=${cityName}&appid=${APIKey}`;
     axios.get(forecastQueryURL)
     .then(function(response){
 
@@ -82,7 +86,7 @@ function initPage(){
             }
         })
     };  
-}
+})
 
 searchEl.addEventListener("click",function() {
     const searchTerm = inputEl.value;
@@ -105,7 +109,6 @@ function renderSearchHistory() {
     historyEl.innerHTML = "";
     for (let i=0; i<searchHistory.length; i++) {
         const historyItem = document.createElement("input");
-        // <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="email@example.com"></input>
         historyItem.setAttribute("type","text");
         historyItem.setAttribute("readonly",true);
         historyItem.setAttribute("class", "form-control d-block bg-white");
@@ -122,9 +125,4 @@ if (searchHistory.length > 0) {
     getWeather(searchHistory[searchHistory.length - 1]);
 }
 
-
-//  Save user's search requests and display them underneath search form
-//  When page loads, automatically generate current conditions and 5-day forecast for the last city the user searched for
-
-}
 initPage();

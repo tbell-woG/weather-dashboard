@@ -1,10 +1,10 @@
-# weather-dashboard
+# Weather Dashboard
 
 Create a weather dashboard application that will retrieve, display, and save weather data for cities using HTML, CSS, Javascript, and jQuery.
 
 Deployment Link: https://tbell-wog.github.io/weather-dashboard/
 
-# Weather Dashboard
+
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
